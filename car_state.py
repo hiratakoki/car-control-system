@@ -1,13 +1,13 @@
 class Carstate:
     def __init__(self):
-        self.window = "closed"
+        self.window = {"right": "closed", "left": "closed"}
         self.wiper = "off"
 
-    def window_open(self):
-        self.window = "open"
+    def window_open(self, side):
+        self.window[side] = "open"
 
-    def window_close(self):
-        self.window = "closed"
+    def window_close(self, side):
+        self.window[side] = "closed"
 
     def wiper_on(self):
         self.wiper = "on"
@@ -17,5 +17,6 @@ class Carstate:
 
     def status(self):
         print("=== 車の状態 ===")
-        print(f"窓: {self.window}")
+        print(f"右の窓: {self.window['right']}")
+        print(f"左の窓: {self.window['left']}")
         print(f"ワイパー: {self.wiper}")
